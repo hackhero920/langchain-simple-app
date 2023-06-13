@@ -39,7 +39,7 @@ def chatbot(query: str):
     memory = ConversationBufferMemory(memory_key="chat_history")
 
     # Define the chatbot prompt template
-    QA_PROMPT_TMPL = '''{bot_name} is a chatbot developed by {company_name} that helps you with Python and React-related questions. It provides users with documentation, installation assistance, code understanding, and other guidance related to Python and React.
+    QA_PROMPT_TMPL = '''{bot_name} is a chatbot developed by {company_name} that helps you with Python and React-related questions. It provides users with documentation, installation assistance, code understanding, and other guidance related to Python and React. Queries non-related to python or react will never be answered by this {bot_name} and will be provided a warm reply to the user regarding this ethical stand-point.
     Context:
     {context_str}
     Conversation History:
