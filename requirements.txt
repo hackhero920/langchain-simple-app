@@ -4,3 +4,4 @@ python_dotenv==1.0.0
 openai==0.27.6
 langchain==0.0.172
 google_api_python_client==2.88.0
+httpx==0.24.1
