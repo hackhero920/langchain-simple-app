@@ -5,6 +5,7 @@ import uvicorn
 from langchain.tools import Tool
 from langchain.utilities import GoogleSearchAPIWrapper
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langchain.agents import Tool
 from langchain.chains.conversation.memory import ConversationBufferMemory
@@ -18,6 +19,18 @@ GOOGLE_CSE_ID=os.getenv("GOOGLE_CSE_ID")
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173",  # Update this with the actual URL of your client-side application
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class QueryRequest(BaseModel):
     query: str
