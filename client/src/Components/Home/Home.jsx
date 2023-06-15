@@ -53,7 +53,7 @@ function Home() {
 
   return (
     <div className="chat-page">
-      <h1>Chatbot</h1>
+      <h1 className="dark:bg-blue-500 bg-slate-100">Chatbot</h1>
       <div className="chat-container" ref={chatContainerRef}>
         {chatHistory.map((chat, index) => (
           <div
