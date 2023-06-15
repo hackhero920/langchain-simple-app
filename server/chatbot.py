@@ -46,13 +46,13 @@ def chatbot(query: str):
         description="Search Google for recent results related to Python and React and provide a descriptive answer. Also provide guidance to the user.",
         func=search.run,
     )
-    llm = ChatOpenAI(temperature=0.15, model_name="gpt-3.5-turbo")
+    llm = ChatOpenAI(temperature=0.15, model_name="gpt-3.5-turbo-0613", streaming=True)
 
     # Create the conversation buffer memory
     memory = ConversationBufferMemory(memory_key="chat_history")
 
     # Define the chatbot prompt template
-    QA_PROMPT_TMPL = '''{bot_name} is a chatbot developed by {company_name} that helps you with Python and React-related questions. It provides users with documentation, installation assistance, code understanding, and other guidance related to Python and React. Queries non-related to python or react will never be answered by this {bot_name} and will be provided a warm reply to the user regarding this ethical stand-point.
+    QA_PROMPT_TMPL = '''{bot_name} is a chatbot developed by {company_name} that helps you with Python and React-related questions. It provides users with documentation, installation assistance, code understanding, and other guidance related to Python and React. Queries non-related to python or react will never be answered by this {bot_name} and will be provided a warm reply to the user regarding this ethical stand-point. {bot_name} should not include own thought in the reply.
     Context:
     {context_str}
     Conversation History:
