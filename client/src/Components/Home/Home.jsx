@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import { Icon } from '@iconify/react';
 
 function formatTime(timeString) {
   const options = {
@@ -52,9 +53,8 @@ function Home() {
   }, [chatHistory]);
 
   return (
-    <div className="chat-page">
-      <h1 className="dark:bg-blue-500 bg-slate-100">Chatbot</h1>
-      <div className="chat-container" ref={chatContainerRef}>
+    <div className="chat-page relative">
+      <div className="chat-container h-screen" ref={chatContainerRef}>
         {chatHistory.map((chat, index) => (
           <div
             className={`chat ${
@@ -82,16 +82,21 @@ function Home() {
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className="message-input">
-        <input
+      <div className="backdrop-blur sticky bottom-0 left-0 right-0">
+      <form onSubmit={handleSubmit} className="message-input  flex justify-center w-auto ">
+        <textarea
+        className="w-3/4 rounded block placeholder:text-center placeholder:flex placeholder:items-center placeholder:justify-center placeholder:text-black dark:placeholder:text-white bg-white text-black dark:bg-black dark:text-white"
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Type your message..."
         />
-        <button type="submit">Send</button>
+        <button type="submit"><Icon className="w-6 h-6 text-blue-700" icon="mingcute:send-fill" /></button>
       </form>
-    </div>
+      <p className="flex justify-center">powered by openAI</p>
+      </div>
+      </div>
+      
   );
 }
 

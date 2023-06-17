@@ -7,7 +7,8 @@ const Navbar = () => {
   const handleMode = () => setDarkTheme(!darkTheme);
 
   return (
-    <div className="navbar bg-indigo-500 dark:bg-indigo-200">
+    <div className="relative bg-indigo-500 dark:bg-indigo-200">
+      <div className="navbar sticky top-0">
       <div className="flex-1">
         <a className="btn btn-ghost text-gray-200 dark:text-gray-700 normal-case text-xl">
           Chatbot
@@ -81,6 +82,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
   );
