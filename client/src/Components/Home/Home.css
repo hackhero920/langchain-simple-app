@@ -1,0 +1,45 @@
+.chat {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .chat-left {
+    justify-content: flex-start;
+  }
+  
+  .chat-right {
+    justify-content: flex-end;
+  }
+  
+  .chat-image {
+    margin-right: 10px;
+  }
+  
+  .chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  
+  .chat-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .user-bubble {
+    background-color: #ff6188;
+  }
+  
+  .chatbot-bubble {
+    background-color: #5c6ac4;
+  }
+  
+  /* Rest of your existing styles */
+  

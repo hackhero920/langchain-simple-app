@@ -31,7 +31,7 @@ function Home() {
       setChatHistory((prevHistory) => [...prevHistory, newChat]);
 
       const chatbotReply = {
-        sender: "Chatbot",
+        sender: "Bot",
         message: response,
         time: formatTime(new Date()), // Get the current time
       };
@@ -53,17 +53,15 @@ function Home() {
   }, [chatHistory]);
 
   return (
-    <div className="chat-page relative">
-      <div className="chat-container h-screen" ref={chatContainerRef}>
+    <div className="chat-page bg-gray-800 dark:bg-gray-200 relative">
+      <div className="chat-container mx-6" ref={chatContainerRef}>
         {chatHistory.map((chat, index) => (
           <div
-            className={`chat ${
-              index === chatHistory.length - 1 ? "chat-start" : "chat-start"
-            } `}
+          className={`chat ${chat.sender === "User" ? "chat-end lg:w-[1/2]" : "chat-start lg:w-1/2"}`}
             key={index}
           >
             <div className="chat-image avatar">
-              <div className="w-10  rounded-full">
+              <div className="w-10 border-2 border-gray-200 dark:border-gray-800 rounded-full">
                 <img
                   src={
                     chat.sender === "User"
@@ -74,26 +72,30 @@ function Home() {
                 />
               </div>
             </div>
-            <div className=" chat-header">
+            <div className={`text-gray-200 dark:text-gray-800 chat-header ${chat.sender === "User" ? "flex flex-row-reverse gap-2" : "flex gap-2"}`}>
               {chat.sender}
               <time className="text-xs opacity-50">{chat.time}</time>
             </div>
-            <div className="chat-bubble">{chat.message}</div>
+            <div className={`chat-bubble ${chat.sender === "User" ? "bg-rose-500" : "bg-blue-500"
+              }`}
+            >
+              {chat.message}
+            </div>
           </div>
         ))}
       </div>
       <div className="backdrop-blur sticky bottom-0 left-0 right-0">
       <form onSubmit={handleSubmit} className="message-input  flex justify-center w-auto ">
-        <textarea
-        className="w-3/4 rounded block placeholder:text-center placeholder:flex placeholder:items-center placeholder:justify-center placeholder:text-black dark:placeholder:text-white bg-white text-black dark:bg-black dark:text-white"
+        <input
+        className="w-3/4 rounded block placeholder:text-center placeholder:flex placeholder:items-center placeholder:justify-center placeholder:text-gray-800 dark:placeholder:text-gray-200 bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Type your message..."
         />
-        <button type="submit"><Icon className="w-6 h-6 text-blue-700" icon="mingcute:send-fill" /></button>
+        <button type="submit"><Icon className="w-6 h-6 text-gray-200 dark:text-gray-800" icon="mingcute:send-fill" /></button>
       </form>
-      <p className="flex justify-center">powered by openAI</p>
+      <p className="flex justify-center text-gray-200 dark:text-gray-800">powered by openAI</p>
       </div>
       </div>
       
