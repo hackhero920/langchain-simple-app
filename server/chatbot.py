@@ -9,8 +9,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langchain.agents import Tool
 from langchain.chains.conversation.memory import ConversationBufferMemory
-# from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
+from langchain.llms import OpenAI
+# from langchain.chat_models import ChatOpenAI
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain import PromptTemplate
@@ -46,8 +46,8 @@ def chatbot(query: str):
         description="Search Google for recent results related to Python and React and provide a descriptive answer based on observation. Also provide guidance to the user. Based on your observation provide reply to the user. If you still do not know the answer simply provide user with a warm and friendly reply.",
         func=search.run,
     )]
-    llm = ChatOpenAI(temperature=0.15, model_name="gpt-3.5-turbo-0613")
-    # llm = OpenAI(temperature=0.15)
+    # llm = ChatOpenAI(temperature=0.15, model_name="gpt-3.5-turbo-0613")
+    llm = OpenAI(temperature=0.15)
 
     # Create the conversation buffer memory
     memory = ConversationBufferMemory(memory_key="chat_history")

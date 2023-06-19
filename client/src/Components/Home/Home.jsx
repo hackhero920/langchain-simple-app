@@ -54,7 +54,7 @@ function Home() {
 
   return (
     <div className="chat-page bg-gray-800 dark:bg-gray-200 relative">
-      <div className="chat-container mx-6" ref={chatContainerRef}>
+      <div className="chat-container h-screen mx-6" ref={chatContainerRef}>
         {chatHistory.map((chat, index) => (
           <div
           className={`chat ${chat.sender === "User" ? "chat-end lg:w-[1/2]" : "chat-start lg:w-1/2"}`}
