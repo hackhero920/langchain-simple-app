@@ -1,6 +1,4 @@
-# Chatbot
-
-![Chatbot Demo](demo.gif)
+# Langchain Chatbot App
 
 ## Description
 
@@ -15,19 +13,18 @@ The Chatbot is a responsive web application that allows users to chat with an AI
 
 ## Demo
 
-Check out the [video demo](assets/chatbot%20demo.webm) to see the Chatbot in action.
+Check out the demo to see the Chatbot in action.
 
-<video width="560" height="315" controls frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  <source src="/assets/chatbot-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img width="1096" height="560" src="./assets/chatbot-demo.gif" frameborder="0" allow="autoplay" allowfullscreen></img>
 
 ## Screenshots
 
 ### Mobile View
 
-![Mobile View](assets/chatbot%20light%20mode.png)
-![Mobile View](assets/chatbot%20dark%20mode.png)
+<div style="display: flex; justify-content: space-evenly;">
+  <img src="assets/chatbot%20light%20mode.png" alt="Mobile View - Light Mode" height="600" width="360" />
+  <img src="assets/chatbot%20dark%20mode.png" alt="Mobile View - Dark Mode" height="600" width="360" />
+</div>
 
 ## Installation
 
@@ -50,3 +47,5 @@ Check out the [video demo](assets/chatbot%20demo.webm) to see the Chatbot in act
 ## Credits
 
 - [OpenAI](https://openai.com) - AI language model used for generating answers.
+- [Md Mushfiqur Rahman](https://www.linkedin.com/in/mushfiqur--rahman/) - Data Scientist and ML Engineer.
+- [Rashedul Hassan Sabbir](https://www.linkedin.com/in/rashedsabbir/) - Full Stack Developer.
