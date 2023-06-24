@@ -28,7 +28,7 @@ a:hover {
 body {
   margin: 0;
   place-items: center;
-  
+
 }
 
 h1 {
@@ -60,7 +60,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    
+
   }
 
   a:hover {
