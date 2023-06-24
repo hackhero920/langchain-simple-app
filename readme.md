@@ -22,8 +22,9 @@ Check out the demo to see the Chatbot in action.
 ### Mobile View
 
 <div style="display: flex; justify-content: space-evenly;">
-  <img src="assets/chatbot%20light%20mode.png" alt="Mobile View - Light Mode" height="600" width="360" />
-  <img src="assets/chatbot%20dark%20mode.png" alt="Mobile View - Dark Mode" height="600" width="360" />
+  <img src="assets/chatbot%20light%20mode.png" alt="Mobile View - Light Mode"  />
+  <img /> <img />
+  <img src="assets/chatbot%20dark%20mode.png" alt="Mobile View - Dark Mode"  />
 </div>
 
 ## Installation
