@@ -15,7 +15,7 @@ The Chatbot is a responsive web application that allows users to chat with an AI
 
 Check out the demo to see the Chatbot in action.
 
-<img src="./assets/chatbot-demo.gif" frameborder="0" allow="autoplay" allowfullscreen></img>
+<img src="./assets/chatbot-demo-vid.gif" frameborder="0" allow="autoplay" allowfullscreen></img>
 
 ## Screenshots
 
